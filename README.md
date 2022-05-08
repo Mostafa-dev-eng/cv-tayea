@@ -1,4 +1,4 @@
-# Webpack 5 Boilerplate Template
+# Converted.in Website
 
 ![Maintenance](https://img.shields.io/maintenance/yes/2022?logo=github)
 ![webpack-current](https://img.shields.io/badge/webpack-v5.72.0-green?logo=webpack)
@@ -10,11 +10,8 @@
 [![npm](https://img.shields.io/npm/dm/@weareathlon/frontend-webpack-boilerplate)](https://www.npmjs.com/package/@weareathlon/frontend-webpack-boilerplate)
 [![GitHub License](https://img.shields.io/github/license/WeAreAthlon/frontend-webpack-boilerplate)](https://github.com/WeAreAthlon/frontend-webpack-boilerplate/blob/master/LICENSE)
 
-![Front-end Webpack Boilerplate](https://repository-images.githubusercontent.com/96102257/4be7b600-61f1-11e9-9ebf-67b17d5ba125)
 
-## Demo
 
-* [Demo page demonstrating building - SASS, JavaScript, Images, Fonts, HTML](https://weareathlon.github.io/frontend-webpack-boilerplate/)
 
 Table of Contents
 =================
