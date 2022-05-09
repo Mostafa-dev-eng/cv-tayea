@@ -1,6 +1,7 @@
 /**
  * Webpack main configuration file
  */
+// const webpack = require('webpack');
 
 const path = require('path');
 const fs = require('fs');
@@ -9,22 +10,43 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { htmlWebpackPluginTemplateCustomizer } = require('template-ejs-loader');
 
 const environment = require('./configuration/environment');
 
 const templateFiles = fs.readdirSync(environment.paths.source)
-  .filter((file) => ['.html', '.ejs'].includes(path.extname(file).toLowerCase())).map((filename) => ({
+  .filter((file) => ['.html', '.ejs'].includes(path.extname(file)
+    .toLowerCase()))
+  .map((filename) => ({
     input: filename,
     output: filename.replace(/\.ejs$/, '.html'),
   }));
 
-const htmlPluginEntries = templateFiles.map((template) => new HTMLWebpackPlugin({
-  inject: true,
-  hash: false,
-  filename: template.output,
-  template: path.resolve(environment.paths.source, template.input),
-  favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
-}));
+const htmlPluginEntries = templateFiles.map((template) => {
+  console.log(template);
+  return new HTMLWebpackPlugin({
+    inject: true,
+    hash: false,
+    filename: template.output,
+    // template: path.resolve(environment.paths.source, template.input),
+    favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
+    template: htmlWebpackPluginTemplateCustomizer({
+
+      templatePath: path.resolve(environment.paths.source, template.input),
+
+      htmlLoaderOption: {
+        // you can set individual html-loader option here.
+        // but preprocessor option is not supported.
+      },
+      templateEjsLoaderOption: { // set individual template-ejs-loader option here
+        root: 'hello', // this is for example, if not needed, just feel free to delete.
+        data: { // example, too.
+          foo: 'test', // btw, you can have indivisual data injection for each .ejs file using data option
+        },
+      },
+    }),
+  });
+});
 
 module.exports = {
   entry: {
@@ -44,6 +66,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
       },
       {
         test: /\.(png|gif|jpe?g|svg)$/i,
@@ -69,6 +95,26 @@ module.exports = {
           filename: 'images/design/[name].[hash:6][ext]',
         },
       },
+      {
+        test: /\.ejs$/i,
+        use: ['html-loader', 'template-ejs-loader'],
+      },
+      // {
+      //   test: /\.ejs$/,
+      //   loader: 'ejs-loader',
+      //   options: {
+      //     esModule: false,
+      //   },
+      // },
+      // {
+      //   test: /\.ejs$/,
+      //   loader: 'ejs-loader',
+      //   options: {
+      //     variable: 'data',
+      //     interpolate: '\\{\\{(.+?)\\}\\}',
+      //     evaluate: '\\[\\[(.+?)\\]\\]',
+      //   },
+      // },
     ],
   },
   optimization: {
@@ -129,7 +175,7 @@ module.exports = {
           },
         },
       ],
-    }),
+    })
   ].concat(htmlPluginEntries),
   target: 'web',
 };
