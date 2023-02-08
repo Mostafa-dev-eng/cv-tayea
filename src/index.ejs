@@ -1,23 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Converted.In</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="converted.in">
-    <% const meta = require('./i18n/en.json') %>
-
+    <meta charset="UTF-8" />
+    <title>Ogani</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Mostafa" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"
+    />
   </head>
   <body>
-  <%- include('./components/header.ejs') %>
-
-
-
-
-
-<%- include('./components/footer.ejs', meta) %>
-
+    <%- include('./components/header.ejs') %> <%-
+    include('./components/section.ejs') %> <%-
+    include('./components/slider.ejs') %> <%-
+    include('./components/featured.ejs') %> <%-
+    include('./components/banner.ejs') %> <%-
+    include('./components/latest-product.ejs') %> <%-
+    include('./components/from-blog.ejs') %> <%-
+    include('./components/footer.ejs') %>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var slide = $("#slide");
+        var latestslideone = $("#latestslideone");
+        var latestslidetwo = $("#latestslidetwo");
+        var latestslidethree = $("#latestslidethree");
+        slide.owlCarousel({
+          loop: true,
+          autoplay: true,
+          dots: false,
+          margin: 15,
+          nav: true,
+          slideBy: 1,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 2,
+            },
+            1000: {
+              items: 4,
+            },
+          },
+        });
+        latestslideone.owlCarousel({
+          loop: true,
+          autoplay: true,
+          dots: false,
+          margin: 15,
+          nav: true,
+          slideBy: 1,
+          responsive: {
+            0: {
+              items: 1,
+            },
+          },
+        });
+        latestslidetwo.owlCarousel({
+          loop: true,
+          autoplay: true,
+          dots: false,
+          margin: 15,
+          nav: true,
+          slideBy: 1,
+          responsive: {
+            0: {
+              items: 1,
+            },
+          },
+        });
+        latestslidethree.owlCarousel({
+          loop: true,
+          autoplay: true,
+          dots: false,
+          margin: 15,
+          nav: true,
+          slideBy: 1,
+          responsive: {
+            0: {
+              items: 1,
+            },
+          },
+        });
+      });
+    </script>
   </body>
 </html>

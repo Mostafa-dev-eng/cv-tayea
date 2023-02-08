@@ -1,6 +1,6 @@
 {
   "author": "Converted.in",
-  "name": "converted.in website",
+  "name": "converted.in-website",
   "version": "5.13.0",
   "description": "",
   "homepage": "https://github.com/convertedin/website",
@@ -69,7 +69,10 @@
   },
   "target": "web",
   "dependencies": {
-    "bootstrap": "^5.1.3",
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.1",
+    "owl.carousel": "^2.3.4",
     "underscore": "^1.13.3"
   }
 }

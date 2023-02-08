@@ -1,0 +1,40 @@
+.latest-product {
+  h4 {
+    font-weight: 800;
+    color: #1c1c1c;
+    font-size: 24px;
+  }
+  .owl-nav {
+    position: absolute;
+    right: 0;
+    top: -80px;
+    margin: 0;
+    button.owl-prev,
+    button.owl-next {
+      height: 30px;
+      width: 30px;
+      background: #f3f6fa !important;
+      border: 1px solid #e6e6e6;
+      color: #636363 !important;
+      margin-right: 10px;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+  .card {
+    .card-body {
+      h5 {
+        color: #252525;
+        margin: 15px 0 8px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      p {
+        font-size: 18px;
+        display: block;
+        color: #252525;
+        font-weight: 700;
+      }
+    }
+  }
+}

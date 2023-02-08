@@ -1,14 +1,37 @@
 /* Core variables */
-@import 'base/vars';
+@import "base/vars";
 
 /* Fonts */
-@import 'base/fonts';
+@import "base/fonts";
 
 /* Mixins, helpers and functions */
-@import 'base/mixins';
-@import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
-
+@import "base/mixins";
+@import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "/node_modules/owl.carousel/dist/assets/owl.carousel.min.css";
+@import "/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css";
 /* Components */
 
 /* Demo Page styles */
-@import './pages/_home';
+@import "./components/slider";
+
+@import "./components/header";
+
+@import "./components/section";
+
+@import "./components/featured";
+
+@import "./components/banner";
+
+@import "./components/latest-product";
+
+@import "./components/from-blog";
+
+@import "./components/footer";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}

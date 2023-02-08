@@ -23,13 +23,14 @@ const templateFiles = fs.readdirSync(environment.paths.source)
   }));
 
 const htmlPluginEntries = templateFiles.map((template) => {
+  // eslint-disable-next-line no-console
   console.log(template);
   return new HTMLWebpackPlugin({
     inject: true,
     hash: false,
     filename: template.output,
     // template: path.resolve(environment.paths.source, template.input),
-    favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),
+    // favicon: path.resolve(environment.paths.source, 'images', 'favicon.ico'),//
     template: htmlWebpackPluginTemplateCustomizer({
 
       templatePath: path.resolve(environment.paths.source, template.input),
@@ -159,8 +160,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(environment.paths.source, 'images', 'content'),
-          to: path.resolve(environment.paths.output, 'images', 'content'),
+          from: path.resolve(environment.paths.source, 'images'),
+          to: path.resolve(environment.paths.output, 'images'),
           toType: 'dir',
           globOptions: {
             ignore: ['*.DS_Store', 'Thumbs.db'],
@@ -175,7 +176,7 @@ module.exports = {
           },
         },
       ],
-    })
+    }),
   ].concat(htmlPluginEntries),
   target: 'web',
 };
