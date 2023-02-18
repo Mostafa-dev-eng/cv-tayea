@@ -1,8 +1,4 @@
-/**
- * Webpack main configuration file
- */
-// const webpack = require('webpack');
-
+/* eslint-disable linebreak-style */
 const path = require('path');
 const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
