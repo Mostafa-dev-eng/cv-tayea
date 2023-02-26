@@ -1,53 +1,64 @@
-.slider {
-  .item {
-    .btn {
-      font-size: 18px;
-      color: #1c1c1c;
-      font-weight: 700;
-      text-transform: uppercase;
-      background: #ffffff;
+.project {
+  .banner {
+    button {
+      font-weight: 400;
+      font-size: 11.5px;
+      color: #111111;
+      padding: 6px 9px;
+      background: #eeeeee;
+      border-radius: 5px;
+      margin-bottom: 14px;
       border: none;
-      width: 80%;
-      padding: 10px;
+    }
+    h2 {
+      font-family: "Space Grotesk";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 31.25px;
+      color: #ffffff;
+      margin-bottom: 11.5px;
+    }
+    p {
+      font-family: "Outfit";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: #ffffff;
+      margin-bottom: 40px;
     }
   }
-
-  .owl-carousel {
-    .owl-nav {
-      button.owl-prev {
-        font-size: 25px;
-        color: #1c1c1c;
-        height: 70px;
-        width: 30px;
-        border: 1px solid #ebebeb;
-        position: absolute;
-        left: -40px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #ffffff;
-        @media (max-width: 768px) {
-          position: relative;
-          bottom: 0;
-          transform: translateY(0);
-          left: -10px;
-        }
+  .slider {
+    .owl-dot {
+      span {
+        background-color: #3474d4;
       }
-      button.owl-next {
-        font-size: 25px;
-        color: #1c1c1c;
-        height: 70px;
-        width: 30px;
-        border: 1px solid #ebebeb;
-        position: absolute;
-        right: -40px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #ffffff;
-        @media (max-width: 768px) {
-          position: relative;
-          bottom: 0;
-          transform: translateY(0);
-          right: -10px;
+    }
+    .item {
+      .card {
+        padding: 20px;
+        background: #222222;
+        border-radius: 12px;
+        min-height: 300px;
+        color: #ffffff;
+        img {
+          max-width: 100%;
+          border-radius: 12px;
+        }
+        .card-body {
+          h3 {
+            font-family: "Space Grotesk";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            color: #ffffff;
+          }
+          p {
+            font-family: "Outfit";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12.5px;
+            color: #dbdbdb;
+          }
         }
       }
     }

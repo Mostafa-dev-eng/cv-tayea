@@ -1,89 +1,68 @@
-// start top header
-
-.top-header {
-  background-color: $light-gray;
-  @media (max-width: 992px) {
-    display: none;
-  }
-  span {
-    height: 50%;
-    border-right: 1px solid rgba(0, 0, 0, 0.219);
-  }
-  a {
-    color: $third-color;
-    font-size: 15px;
-  }
-  svg {
-    font-size: 15px;
-  }
-  .dropdown {
-    img {
-      width: 20px;
-      height: 15px;
+header {
+  .navbar-brand {
+    margin-left: 15px;
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: #ffffff;
     }
   }
-}
-
-// end top header
-
-// start header menu
-
-.header-menu {
-  a {
-    font-size: 15px;
-    color: $third-color;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    padding: 5px 0;
-    display: block;
-    transition: 0.3s;
+  .navbar-toggler {
+    color: #ffffff;
+    box-shadow: none !important;
+    border: none;
+    font-size: 25px;
+    margin-right: 15px;
   }
-  .active,
-  a:hover {
-    color: $main-color !important;
-  }
-  svg {
-    font-size: 18px;
-  }
-  .cart-price {
-    ul {
-      list-style: none;
-      span {
-        height: 13px;
-        width: 13px;
-        background: $main-color;
-        font-size: 9px;
-        color: $white;
-        text-align: center;
-        font-weight: 700;
-        border-radius: 50%;
-        top: -2px;
-        right: -2px;
-      }
-    }
+  ul {
     @include lgwidth {
       margin-top: 15px;
     }
-    .cart-price-item {
-      font-size: 15px;
-      color: #6f6f6f;
-    }
-  }
-  .offcanvas-body {
-    a {
-      color: $third-color;
+    li {
+      margin: 0 15px;
       &:hover {
-        color: $third-color !important;
+        a::before {
+          background: #3474d4;
+          width: 100%;
+        }
+        a {
+          color: #3474d4;
+        }
       }
-    }
-    .active {
-      color: $white !important;
-      &:hover {
-        color: $white !important;
+      a {
+        font-weight: 400;
+        font-size: 16px;
+        color: #ffffff;
+        transition: 0.3s;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        @include lgwidth {
+          margin: 0 0 18px 0;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          height: 2px;
+          width: 0;
+          left: 0;
+          transition: 0.4s;
+        }
+      }
+      button {
+        font-weight: 400;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #003cbf;
+        padding: 12px 19px;
+        border: none;
+        border-radius: 16px;
+        &:hover {
+          color: #ffffff;
+          background-color: #003cbf;
+        }
       }
     }
   }
 }
-
-// end header menu

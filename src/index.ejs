@@ -42,9 +42,10 @@
         slide.owlCarousel({
           loop: true,
           autoplay: true,
-          dots: false,
+          dots: true,
           margin: 15,
-          nav: true,
+          nav: false,
+          stagePadding: 50,
           slideBy: 1,
           responsive: {
             0: {
@@ -54,46 +55,10 @@
               items: 2,
             },
             1000: {
+              items: 3,
+            },
+            1300: {
               items: 4,
-            },
-          },
-        });
-        latestslideone.owlCarousel({
-          loop: true,
-          autoplay: true,
-          dots: false,
-          margin: 15,
-          nav: true,
-          slideBy: 1,
-          responsive: {
-            0: {
-              items: 1,
-            },
-          },
-        });
-        latestslidetwo.owlCarousel({
-          loop: true,
-          autoplay: true,
-          dots: false,
-          margin: 15,
-          nav: true,
-          slideBy: 1,
-          responsive: {
-            0: {
-              items: 1,
-            },
-          },
-        });
-        latestslidethree.owlCarousel({
-          loop: true,
-          autoplay: true,
-          dots: false,
-          margin: 15,
-          nav: true,
-          slideBy: 1,
-          responsive: {
-            0: {
-              items: 1,
             },
           },
         });
